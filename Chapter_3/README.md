@@ -5,10 +5,10 @@ A naive linear regression implementation and test with random data.
 
 
 
-## The MNIST Database of handwritten digits
+## The Fashion-MNIST Dataset
 
-[Official Website](http://yann.lecun.com/exdb/mnist/)
+[Official Site](https://github.com/zalandoresearch/fashion-mnist)
 
-One should downloads the 4 dataset files manually. This is the main dataset that used in this chapter.
+One should downloads the 4 dataset files manually, they are the main datasets that used in this chapter.
 
-According to the file formats described on the website, a reading-data-module has been implemented and store in `Dataset.py`.
+According to the file formats described on the [original MNIST dataset wite](http://yann.lecun.com/exdb/mnist/), a reading-data-module has been implemented and store in `Dataset.py`. One can use the module to read and iterate samples.
