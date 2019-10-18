@@ -13,7 +13,7 @@ def LineReg(X, w, b):
 def Loss(y1, y2):
     return ( (y1-y2) ** 2 ).mean()
 
-def Optmizer(params, lr, bsz): # Stochastic Gradient Descent
+def Optimizer(params, lr, bsz): # Stochastic Gradient Descent
     for param in params:
         param.data -= lr * param.grad / bsz
 
@@ -72,7 +72,7 @@ for epoch in range(epochs):
     for X, Y in IterData(batch_size, features, labels):
         loss = Loss( LineReg(X, w, b), Y )
         loss.backward()
-        Optmizer([w,b], lr, len(X))
+        Optimizer([w,b], lr, len(X))
         '''
         print('w =', w)
         #print(w.grad)
