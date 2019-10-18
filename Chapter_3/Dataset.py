@@ -17,6 +17,10 @@ class Reader:
         path2 = path + 't10k-labels-idx1-ubyte'
         self.test_features, self.test_labels = self.ReadDataSet(path1, path2)
 
+        # There are 10 classes and the labels are from 0~9.
+        # (according to the dataset author on the official website)
+        self.label_number = 10
+
     def Byte2Int(src):
         res = 0
         for x in src:
@@ -36,13 +40,15 @@ class Reader:
         assert n == Reader.Byte2Int( fp2.read(4) )
         row, col = Reader.Byte2Int(fp1.read(4) ), Reader.Byte2Int( fp1.read(4) )
 
+        self.n, self.row, self.col = n, row, col
+
         features = tf.empty(n, row*col, dtype = tf.float32)
-        labels = tf.empty(n, 1, dtype = tf.float32)
+        labels = tf.empty(n, dtype = tf.long)
 
         for i in range(n):
             #print('i = %d\n', i)
             features[i] = tf.tensor([fp1.read(row*col)], dtype = tf.float32)
-            labels[i] = tf.tensor([fp2.read(1)], dtype = tf.float32)
+            labels[i] = tf.tensor([fp2.read(1)], dtype = tf.long)
 
         return features, labels
 

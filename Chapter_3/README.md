@@ -11,4 +11,28 @@ A naive linear regression implementation and test with random data.
 
 One should downloads the 4 dataset files manually, they are the main datasets that used in this chapter.
 
-According to the file formats described on the [original MNIST dataset wite](http://yann.lecun.com/exdb/mnist/), a reading-data-module has been implemented and store in `Dataset.py`. One can use the module to read and iterate samples.
+According to the file formats described on the [original MNIST dataset website](http://yann.lecun.com/exdb/mnist/), a reading-data-module has been implemented and store in `Dataset.py`. One can use the module to read and iterate samples.
+
+
+
+## Softmax Regression
+
+### Softmax Function
+
+$$
+(x,y) \rightarrow \frac{\exp(w_y x + b_y)}{\sum_i \exp(w_i x + b_i)}
+$$
+
+Here $x, w_i, b_i$ may be vectors, and $w_i, b_i$ is the parameters going to be optimized.
+
+### Cross Entropy Loss
+
+$$
+\begin{aligned}
+L(X,Y) &= - \frac{1}{N_{label}} \log \left( \prod_i \frac{\exp(w_{y_i} x_i + b_{y_i})}{\sum_j \exp(w_j x_j + b_j)} \right) \\
+&= - \frac{1}{N_{label}} \sum_{i} \log \left( \frac{\exp(w_{y_i} x_i + b_{y_i})}{\sum_j \exp(w_j x_j + b_j)} \right) \\
+&= - \frac{1}{N_{label}} \sum_i \left( (w_{y_i} x_i + b_{y_i}) - \log \left( \sum_j \exp (w_j x_j + b_j) \right) \right)
+\end{aligned}
+$$
+
+The formula above shows that its computation can be slightly optimized.
