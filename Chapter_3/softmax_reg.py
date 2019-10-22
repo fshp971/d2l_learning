@@ -49,11 +49,6 @@ def Write2Png(W, B, X, Y, label_number):
                      '_P' + pred + '_T' + gtrue + '.png', 
                      X[i].view(28,28), cmap=plt.cm.gray)
 
-    acc = [stat[i]/cnt[i] for i in range(label_number)]
-    print(stat)
-    print(cnt)
-    print(acc)
-
 # acc[i] stand for the rate of pictures with label i
 # that be correctly predicted as i
 def CalcStat(W, B, X, Y, label_number):
