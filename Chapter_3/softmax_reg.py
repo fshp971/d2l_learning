@@ -63,7 +63,7 @@ def CalcStat(W, B, X, Y, label_number):
 
 def main():
     # parameters that can be adjusted
-    epochs = 5
+    epochs = 10
     lr = 0.000001
     batch_size = 50
 
@@ -79,8 +79,6 @@ def main():
     test_acc = CalcAccuracy( W, B, reader.test_features, reader.test_labels )
     print('epoch = %d, train_loss = %.4f, train_acc = %.4f, test.acc = %.4f' % 
             (0, train_loss, train_acc, test_acc))
-    res1 = CalcStat(W, B, reader.train_features, reader.train_labels, reader.label_number)
-    res2 = CalcStat(W, B, reader.test_features, reader.test_labels, reader.label_number)
 
     for epoch in range(epochs):
         for X, Y in reader.IterTrain(batch_size):

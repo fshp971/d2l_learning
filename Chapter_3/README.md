@@ -28,3 +28,17 @@ Here $x, w_i, b_i$ may be vectors, and $w_i, b_i$ is the parameters going to be 
 ![cross_entropy_loss](../Figures/cross_entropy_loss.svg)
 
 The formula above shows that its computation can be slightly optimized.
+
+
+
+## Multilayer Perceptron (MLP)
+
+### Activation function
+
+![cross_entropy_loss](../Figures/activation.svg)
+
+### MLP with multiple hidden layers
+
+![cross_entropy_loss](../Figures/mlp.svg)
+
+In MLP, the initialization of parameters (i.e. W, b) is essential. One should manually initialize them before optimization with random values, for example, values of normal distribution.

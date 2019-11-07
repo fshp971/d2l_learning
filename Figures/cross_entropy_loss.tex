@@ -1,5 +1,5 @@
 \begin{aligned}
-L(X,Y) &= - \frac{1}{N_{label}} \log \left( \prod_i \frac{\exp(w_{y_i} x_i + b_{y_i})}{\sum_j \exp(w_j x_j + b_j)} \right) \\
-&= - \frac{1}{N_{label}} \sum_{i} \log \left( \frac{\exp(w_{y_i} x_i + b_{y_i})}{\sum_j \exp(w_j x_j + b_j)} \right) \\
-&= - \frac{1}{N_{label}} \sum_i \left( (w_{y_i} x_i + b_{y_i}) - \log \left( \sum_j \exp (w_j x_j + b_j) \right) \right)
+L(X,Y) &= - \frac{1}{N_{sample}} \log \left( \prod_i \frac{\exp(w_{y_i} x_i + b_{y_i})}{\sum_j \exp(w_j x_j + b_j)} \right) \\
+&= - \frac{1}{N_{sample}} \sum_{i} \log \left( \frac{\exp(w_{y_i} x_i + b_{y_i})}{\sum_j \exp(w_j x_j + b_j)} \right) \\
+&= - \frac{1}{N_{sample}} \sum_i \left( (w_{y_i} x_i + b_{y_i}) - \log \left( \sum_j \exp (w_j x_j + b_j) \right) \right)
 \end{aligned}
