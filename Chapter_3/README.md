@@ -19,20 +19,12 @@ According to the file formats described on the [original MNIST dataset website](
 
 ### Softmax Function
 
-$$
-(x,y) \rightarrow \frac{\exp(w_y x + b_y)}{\sum_i \exp(w_i x + b_i)}
-$$
+![cross_entropy_loss](../Figures/softmax_function.svg)
 
 Here $x, w_i, b_i$ may be vectors, and $w_i, b_i$ is the parameters going to be optimized.
 
 ### Cross Entropy Loss
 
-$$
-\begin{aligned}
-L(X,Y) &= - \frac{1}{N_{label}} \log \left( \prod_i \frac{\exp(w_{y_i} x_i + b_{y_i})}{\sum_j \exp(w_j x_j + b_j)} \right) \\
-&= - \frac{1}{N_{label}} \sum_{i} \log \left( \frac{\exp(w_{y_i} x_i + b_{y_i})}{\sum_j \exp(w_j x_j + b_j)} \right) \\
-&= - \frac{1}{N_{label}} \sum_i \left( (w_{y_i} x_i + b_{y_i}) - \log \left( \sum_j \exp (w_j x_j + b_j) \right) \right)
-\end{aligned}
-$$
+![cross_entropy_loss](../Figures/cross_entropy_loss.svg)
 
 The formula above shows that its computation can be slightly optimized.
