@@ -2,6 +2,6 @@
 \boldsymbol{\mathrm{h}}_1 =& f(\boldsymbol{\mathrm{W}}_1 \boldsymbol{\mathrm{x}} + \boldsymbol{\mathrm{b}}_1) \\
 \boldsymbol{\mathrm{h}}_2 =& f(\boldsymbol{\mathrm{W}}_2 \boldsymbol{\mathrm{h}}_1 + \boldsymbol{\mathrm{b}}_2) \\
 \vdots& \\
-\boldsymbol{\mathrm{o}} =& f(\boldsymbol{\mathrm{W}}_N \boldsymbol{\mathrm{h}}_{N-1} + \boldsymbol{\mathrm{b}}_N) \\
-\widehat{\boldsymbol{\mathrm{y}}} =& \mathrm{softmax}(\boldsymbol{\mathrm{o}})
+\boldsymbol{\mathrm{h}}_{N-1} =& f(\boldsymbol{\mathrm{W}}_{N-1} \boldsymbol{\mathrm{h}}_{N-2} + \boldsymbol{\mathrm{b}}_{N-1}) \\
+\boldsymbol{\mathrm{o}} =& \mathrm{softmax}(\boldsymbol{\mathrm{W}}_N \boldsymbol{\mathrm{h}}_{N-1} + \boldsymbol{\mathrm{b}}_N) \\
 \end{aligned}
