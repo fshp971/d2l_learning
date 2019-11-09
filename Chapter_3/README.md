@@ -42,3 +42,13 @@ The formula above shows that its computation can be slightly optimized.
 ![cross_entropy_loss](../Figures/mlp.svg)
 
 In MLP, the initialization of parameters (i.e. W, b) is essential. One should manually initialize them before optimization with random values, for example, values of normal distribution.
+
+
+
+## Dropout
+
+![cross_entropy_loss](../Figures/dropout.svg)
+
+Dropout is a way to improve the generalization ability of neural-network-based models. 
+
+The dropout probability usually set to 0.5, but may not always have good effect (sometimes worse than no-dropout cases).
